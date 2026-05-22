@@ -1,0 +1,21 @@
+# C2: Gate - Episodic Mamba with astrocyte gate, no persistent state, no closure
+# Tests contribution of gating mechanism alone
+
+defaults:
+  - /model: astrostream_base
+
+name: C2_gate
+description: "Episodic Mamba with astrocyte gate, no persistent state, no closure objective."
+
+mamba:
+  persistent_state: false
+
+astrocyte_gate:
+  enabled: true
+
+jepa:
+  enabled: true
+
+closure:
+  enabled: false
+  training_weight: 0.0

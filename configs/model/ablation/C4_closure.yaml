@@ -1,0 +1,21 @@
+# C4: Closure - Episodic Mamba with closure training objective, no persistent state, no gate
+# Tests contribution of closure metric as training signal
+
+defaults:
+  - /model: astrostream_base
+
+name: C4_closure
+description: "Episodic Mamba with closure training objective, no persistent state, no gate."
+
+mamba:
+  persistent_state: false
+
+astrocyte_gate:
+  enabled: false
+
+jepa:
+  enabled: true
+
+closure:
+  enabled: true
+  training_weight: 0.1

@@ -1,0 +1,21 @@
+# C6: Gate + Closure - Episodic Mamba with gate and closure training, no persistent state
+# Tests gating with closure objective
+
+defaults:
+  - /model: astrostream_base
+
+name: C6_gate_closure
+description: "Episodic Mamba with astrocyte gate + closure training objective, no persistent state."
+
+mamba:
+  persistent_state: false
+
+astrocyte_gate:
+  enabled: true
+
+jepa:
+  enabled: true
+
+closure:
+  enabled: true
+  training_weight: 0.1

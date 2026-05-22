@@ -1,0 +1,22 @@
+# C7: Full - Complete Astro-Stream model
+# Persistent state + astrocyte gate + closure training objective
+# This is the proposed model combining all mechanisms
+
+defaults:
+  - /model: astrostream_base
+
+name: C7_full
+description: "Full Astro-Stream: persistent state + astrocyte gate + closure training. Complete proposed model."
+
+mamba:
+  persistent_state: true
+
+astrocyte_gate:
+  enabled: true
+
+jepa:
+  enabled: true
+
+closure:
+  enabled: true
+  training_weight: 0.1
