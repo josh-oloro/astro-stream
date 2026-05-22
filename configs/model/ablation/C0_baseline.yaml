@@ -1,0 +1,21 @@
+# C0: Baseline - Episodic Mamba, no persistent state, no gate, no closure
+# Replicates Défossez 2023 episodic baseline
+
+defaults:
+  - /model: astrostream_base
+
+name: C0_baseline
+description: "Episodic Mamba, no persistent state, no gate, no closure objective. Replicates Défossez 2023."
+
+mamba:
+  persistent_state: false
+
+astrocyte_gate:
+  enabled: false
+
+jepa:
+  enabled: true           # training objective always on
+
+closure:
+  enabled: false          # not used as a training signal in C0
+  training_weight: 0.0

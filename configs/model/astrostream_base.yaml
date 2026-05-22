@@ -1,0 +1,42 @@
+# Astro-Stream NeuroAI Base Configuration
+# Full model with all components enabled
+
+# Architecture
+d_model: 512              # hidden dimension
+n_layers: 6               # number of Mamba blocks
+dropout: 0.1
+
+# Mamba SSM (from Gu & Dao 2023, arXiv:2312.00752)
+mamba:
+  d_state: 16             # SSM state expansion factor
+  d_conv: 4               # local convolution width
+  expand: 2               # block expansion factor
+  persistent_state: true  # maintain state across patches (causal)
+
+# Astrocyte gate (lateral, not deep)
+astrocyte_gate:
+  enabled: true
+  alpha: 0.02             # decay constant for slow state s_t (~200 ms at 200 Hz → α=0.02)
+  init_theta: 0.0         # initial Ca²⁺ threshold θ (learned)
+  init_w: 1.0             # initial gate weight w (learned)
+  per_channel: true       # separate gate params per hidden dim
+
+# JEPA objective (LeCun 2022)
+jepa:
+  enabled: true
+  ema_momentum_start: 0.996
+  ema_momentum_end: 0.9999
+  predictor_depth: 2      # cross-attention layers in predictor
+  predictor_heads: 8
+
+# Closure metric (training signal)
+closure:
+  enabled: true           # compute at every checkpoint
+  max_lag: 8              # temporal lags 1..8 windows
+  pca_dims: [2, 4, 8, 16, 32, 64, 128]
+  training_weight: 0.1    # λ_closure in loss = JEPA_loss + λ_closure * closure_loss
+
+# Decoder head
+decoder:
+  type: linear_probe      # linear layer on frozen representations
+  n_speech_classes: 1594  # number of unique segments in Gwilliams test set

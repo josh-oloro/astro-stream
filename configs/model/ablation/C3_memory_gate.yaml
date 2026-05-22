@@ -1,0 +1,21 @@
+# C3: Memory + Gate - Persistent state + astrocyte gate, no closure
+# Tests interaction of memory and gating
+
+defaults:
+  - /model: astrostream_base
+
+name: C3_memory_gate
+description: "Persistent Mamba state + astrocyte gate, no closure objective."
+
+mamba:
+  persistent_state: true
+
+astrocyte_gate:
+  enabled: true
+
+jepa:
+  enabled: true
+
+closure:
+  enabled: false
+  training_weight: 0.0

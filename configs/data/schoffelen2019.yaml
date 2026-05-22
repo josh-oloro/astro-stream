@@ -1,0 +1,21 @@
+name: schoffelen2019
+donders_doi: 10.34973/tg9s-5831
+n_subjects: 96
+n_channels: 273
+sampling_rate_raw: 1200
+sampling_rate_target: 200
+bandpass_low: 0.5
+bandpass_high: 30.0
+epoch_tmin: -0.2
+epoch_tmax: 1.0
+baseline: null
+reject_threshold: 4e-12
+mask_rate: 0.15
+patch_length_samples: 50
+wav2vec_model: "facebook/wav2vec2-large-xlsr-53"   # multilingual, for Dutch
+cache_dir: "data/cache/schoffelen2019"
+split:
+  train: 0.8
+  val: 0.1
+  test: 0.1
+  split_by: subject

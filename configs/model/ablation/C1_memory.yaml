@@ -1,0 +1,21 @@
+# C1: Memory - Persistent Mamba state, no gate, no closure
+# Tests contribution of causal memory alone
+
+defaults:
+  - /model: astrostream_base
+
+name: C1_memory
+description: "Persistent Mamba state enabled, no gate, no closure objective."
+
+mamba:
+  persistent_state: true
+
+astrocyte_gate:
+  enabled: false
+
+jepa:
+  enabled: true
+
+closure:
+  enabled: false
+  training_weight: 0.0

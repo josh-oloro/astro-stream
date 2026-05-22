@@ -1,0 +1,21 @@
+# C5: Memory + Closure - Persistent state + closure training, no gate
+# Tests memory with closure objective
+
+defaults:
+  - /model: astrostream_base
+
+name: C5_memory_closure
+description: "Persistent Mamba state + closure training objective, no gate."
+
+mamba:
+  persistent_state: true
+
+astrocyte_gate:
+  enabled: false
+
+jepa:
+  enabled: true
+
+closure:
+  enabled: true
+  training_weight: 0.1
