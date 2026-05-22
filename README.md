@@ -366,13 +366,15 @@ If you use Astro-Stream in your research, please cite:
 
 ## Authors
 
-- **Josh Oloro** – Lead developer
+- **Joshua Philippe Olorocisimo, Ph.D.** – Project Advisor
+- **Paul R. Regonia, Ph.D.** – Project Leader
+- **Jeric C. Briones, Ph.D.** – Project Leader
 
 ## Contact & Support
 
 - **Issues**: [GitHub Issues](https://github.com/josh-oloro/astro-stream/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/josh-oloro/astro-stream/discussions)
-- **Email**: josh@example.com
+- **Email**: josholorocisimo@gmail.com ; pdregonia@up.edu.ph ; jbriones@ateneo.edu
 
 ---
 
