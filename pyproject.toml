@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astrostream-neuroai"
+version = "0.1.0"
+description = "Streaming neuroai models with astrocyte-inspired gating for real-time neural decoding"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Josh Oloro", email = "josh@example.com"}]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.2",
+    "torchaudio>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "scikit-learn>=1.4",
+    "mne>=1.6",
+    "transformers>=4.40",
+    "mamba-ssm>=1.2",
+    "einops>=0.7",
+    "omegaconf>=2.3",
+    "hydra-core>=1.3",
+    "wandb>=0.16",
+    "tqdm>=4.66",
+    "pandas>=2.1",
+    "h5py>=3.10",
+]
+keywords = ["neuroscience", "EEG", "MEG", "neural-decoding", "state-space-models", "streaming"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.4",
+    "mypy>=1.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/josh-oloro/astro-stream"
+Repository = "https://github.com/josh-oloro/astro-stream.git"
+Issues = "https://github.com/josh-oloro/astro-stream/issues"
+
+[tool.setuptools]
+packages = ["astrostream"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I"]
+ignore = ["E501"]
+target-version = "py310"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.isort]
+known-first-party = ["astrostream"]
+known-third-party = ["torch", "numpy", "scipy", "mne", "transformers"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short -q"
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+strict_optional = true
