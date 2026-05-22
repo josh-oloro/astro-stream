@@ -357,7 +357,7 @@ If you use Astro-Stream in your research, please cite:
 ```bibtex
 @article{astrostream2024,
   title={Astro-Stream: Streaming Neuroai Models with Astrocyte-Inspired Gating},
-  author={Oloro, Josh and others},
+  author={Olorocisimo J.P., Regonia P.R., Briones J.C., and others},
   journal={Preprint},
   year={2024},
   note={Available at https://github.com/josh-oloro/astro-stream}
