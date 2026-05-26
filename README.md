@@ -378,4 +378,4 @@ If you use Astro-Stream in your research, please cite:
 
 ---
 
-**Last Updated**: May 2024 | **Status**: Active Development
+**Last Updated**: May 2026 | **Status**: Active Development
